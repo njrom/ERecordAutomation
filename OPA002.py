@@ -1,4 +1,5 @@
-def main():
+
+def main(): #TODO: Need to Retake the images because I saved over them on accident
     switchApp("Hyperspace URMC")
     type("ORSCHED")
     type(Key.TAB)
@@ -11,7 +12,7 @@ def main():
     wait(2)
     type(Key.ENTER + Key.ENTER)
     while (True):  # Waits for POC to load and be logged in
-        if (exists("1521830437049.png")):
+        if (exists("1522190552222.png")):
             break
     click("1521765117289.png")
     type("ZEBRA,OPTIME" + Key.ENTER + Key.ENTER)
@@ -32,5 +33,6 @@ def main():
     type("N/A")  # Laterality
     click(Pattern("1521838272064.png").targetOffset(0, 15))
     type("General")  # Anesthesia
+
 
 main()
