@@ -13,6 +13,7 @@ def main():
     while (True):  # Waits for POC to load and be logged in
         if (exists("1522354426935.png")): 
             break
+    wait(5)
     click("1522354588024.png") # Open case button
     type("ZEBRA,OPTIME" + Key.ENTER + Key.ENTER)
     type(Key.TAB + "SMH Main OR" + Key.TAB)
@@ -55,22 +56,27 @@ def test():
     click("1522372124942.png")
     type(Key.TAB*15+Key.ENTER) # Selecteds NIDDM, This is a major limitation of the code
     while(not exists("1522372377542.png")):
-        type(Key.TAB*15)
-    type(Key.TAB*7) 
-    click(Pattern("1522372377542.png").targetOffset(0,15))
+        type(Key.PAGE_DOWN)
+    click(Pattern("1522781153918.png").targetOffset(0,15))
     type("T+3") # Procedure Date
     type(Key.TAB+"2") # Days staying
+    click("1522783340922.png") # Need to click out of text field so page down works
     while(not exists("1522436964040.png")):
-        type(Key.TAB*15) # Scroll till you see the Patient Insurance header
-    type(Key.TAB*7)
+        type(Key.PAGE_DOWN) # Scroll till you see the Patient Insurance header
     wait(1)
-    click("1522437004745.png")
-    type(Key.TAB+Key.ENTER)
+    click(Pattern("1522438227096.png").targetOffset(0,15))
+    type("Primary"+Key.TAB)
+    type("Aetna - University of Rochester"+Key.TAB)
+    click("1522783376667.png")
+    while(not exists("1522438630985.png")):
+        type(Key.PAGE_DOWN)
+    type(Key.PAGE_DOWN)
+    click("1522438833623.png")
+    type(Key.TAB+Key.ENTER+Key.ENTER)
     
     
     
 
     
-   
 test()  
     
